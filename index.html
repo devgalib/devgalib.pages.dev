@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Asadullah Hil Galib · devgalib</title>
+    <meta name="description" content="Asadullah Hil Galib (devgalib): Android and game developer, founder of Edu Reminder. 11 apps on Google Play, games, and open source." />
+    <meta name="theme-color" content="#07080c" />
+    <meta property="og:title" content="Asadullah Hil Galib · devgalib" />
+    <meta property="og:description" content="Android & game developer. Founder of Edu Reminder." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip" href="#about">Skip to content</a>
+
+    <div id="boot" aria-hidden="true">
+      <pre id="boot-log"></pre>
+      <div class="boot-bar"><span id="boot-fill"></span></div>
+    </div>
+
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <div id="css3d" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="Back to top"><span class="brand-mark">g</span><span>devgalib</span></a>
+      <nav aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#apps">Apps</a>
+        <a href="#games">Games</a>
+        <a href="#code">Code</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="mode" id="mode" title="Rendering backend"></span>
+    </header>
+
+    <div class="progress" aria-hidden="true"><span id="progress-fill"></span></div>
+
+    <main id="content">
+      <section class="sec" id="top" data-stop="0">
+        <div class="panel hero">
+          <p class="kicker"><span class="dot"></span> Android &amp; game developer</p>
+          <h1 data-name>Asadullah Hil Galib</h1>
+          <p class="lead">I build calm, fast Android apps and games. Founder of <a href="https://edureminder.com" target="_blank" rel="noopener">Edu Reminder</a>. Next up: bigger worlds, in 3D.</p>
+          <div class="cta">
+            <a class="btn primary" href="#apps">See my work</a>
+            <a class="btn" href="https://github.com/devgalib" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+          <p class="hint"><span class="mouse"></span> Scroll to walk through my workspace</p>
+        </div>
+      </section>
+
+      <section class="sec" id="about" data-stop="1">
+        <div class="panel">
+          <p class="kicker">01 · About</p>
+          <div class="who">
+            <img id="avatar" alt="Asadullah Hil Galib" width="72" height="72" loading="lazy" />
+            <div>
+              <h2>The person behind the screen</h2>
+              <p class="muted">@devgalib · coding since 2021</p>
+            </div>
+          </div>
+          <p>I ship Android apps with Kotlin and Jetpack Compose, and I design them screen by screen. My apps run offline first, keep data on the phone and stay light, even on older devices.</p>
+          <dl class="stats" id="stats"></dl>
+          <ul class="chips" id="stack" aria-label="Tech stack"></ul>
+        </div>
+      </section>
+
+      <section class="sec" id="apps" data-stop="2">
+        <div class="panel wide">
+          <p class="kicker">02 · Apps</p>
+          <h2>Eleven apps, live on Google Play</h2>
+          <p class="muted">Faith, focus and learning. All built and maintained by me under Edu Reminder.</p>
+          <div class="filters" role="tablist" aria-label="Filter apps" id="app-filters"></div>
+          <ul class="apps" id="app-list"></ul>
+          <a class="more" href="https://play.google.com/store/apps/dev?id=5933037260447171212" target="_blank" rel="noopener">All apps on Google Play ↗</a>
+        </div>
+      </section>
+
+      <section class="sec" id="games" data-stop="3">
+        <div class="panel wide">
+          <p class="kicker">03 · Games</p>
+          <h2>Arrow Puzzle, playable right here</h2>
+          <p class="muted">A mini version of my logic game: tap an arrow to slide it off the board, but only if its lane is clear. The arcade cabinet mirrors your board live.</p>
+          <div class="game">
+            <div class="game-hud">
+              <span id="pz-level">Level 1</span>
+              <span id="pz-hearts" aria-label="Hearts"></span>
+              <button class="btn small" id="pz-reset" type="button">Restart</button>
+            </div>
+            <canvas id="puzzle" width="560" height="560" aria-label="Arrow puzzle board. Use Tab to select an arrow and Enter to move it."></canvas>
+            <p class="game-msg" id="pz-msg" role="status" aria-live="polite"></p>
+          </div>
+          <div class="game-links">
+            <a href="https://edureminder.com/games/arrowpuzzle" target="_blank" rel="noopener">Full game: 2,058 levels ↗</a>
+            <a href="https://edureminder.com/games/jigsawpuzzles" target="_blank" rel="noopener">Jigsaw Puzzles, coming soon ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="code" data-stop="4">
+        <div class="panel wide">
+          <p class="kicker">04 · Open source</p>
+          <h2>Code I share</h2>
+          <ul class="repos" id="repos"></ul>
+          <div class="term" id="term">
+            <div class="term-bar"><i></i><i></i><i></i><span>galib@workspace: ~</span></div>
+            <div class="term-out" id="term-out" role="log" aria-live="polite"></div>
+            <label class="term-line"><span class="ps">galib@workspace:~$</span><input id="term-in" autocomplete="off" spellcheck="false" aria-label="Terminal command" placeholder="type help" /></label>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="contact" data-stop="5">
+        <div class="panel hero">
+          <p class="kicker">05 · Contact</p>
+          <h2 class="big">Let's build something.</h2>
+          <p class="lead">Apps, games or a weird idea that needs a developer. I read everything.</p>
+          <ul class="contact" id="contact-list"></ul>
+          <footer class="foot">© <span id="year"></span> Asadullah Hil Galib · Built with Three.js, by hand.</footer>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
