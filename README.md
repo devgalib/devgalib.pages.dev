@@ -1,5 +1,7 @@
 # devgalib — portfolio
 
+**Live:** https://devgalib.pages.dev · auto-deploys from `main` via Cloudflare Pages.
+
 Personal site of **Asadullah Hil Galib** (`@devgalib`): a 3D workspace you walk through by scrolling.
 
 - **3D:** Three.js `WebGPURenderer` (uses WebGPU, falls back to WebGL 2 automatically).
